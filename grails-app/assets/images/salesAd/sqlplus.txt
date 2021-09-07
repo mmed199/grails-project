@@ -1,0 +1,45 @@
+
+SQL*Plus: Release 19.0.0.0.0 - Production on Jeu. Sept. 10 14:46:02 2020
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+
+Entrez le nom utilisateur : / as sysdba
+
+ConnectÚ Ó :
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+
+SQL> show dba
+SP2-0158: option SHOW inconnue "dba"
+SQL> show pdbs
+
+    CON_ID CON_NAME                       OPEN MODE  RESTRICTED
+---------- ------------------------------ ---------- ----------
+         2 PDB$SEED                       READ ONLY  NO
+         3 ORCLPDB                        MOUNTED
+SQL> alter pluggable database orclpdb open;
+
+Base de donnÚes pluggable modifiÚe.
+
+SQL> show pdbs
+
+    CON_ID CON_NAME                       OPEN MODE  RESTRICTED
+---------- ------------------------------ ---------- ----------
+         2 PDB$SEED                       READ ONLY  NO
+         3 ORCLPDB                        READ WRITE NO
+SQL> alter pluggable database orclpdb save state;
+
+Base de donnÚes pluggable modifiÚe.
+
+SQL> alter session set container=orclpdb;
+
+Session modifiÚe.
+
+SQL> connect pdbadmin@orclpdb/Zakaria1992
+ERROR:
+ORA-12154: TNS : l'identificateur de connexion indiquÚ n'a pas pu Ûtre rÚsolu
+
+
+Avertissement : vous n'Ûtes plus connectÚ Ó ORACLE.
+SQL>
